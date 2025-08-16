@@ -10,7 +10,7 @@ function HomePageContent() {
   const [mnemonic, setMnemonic] = useState("");
   const navigate = useNavigate();
 
-  const handleKeyPress = (event) => {
+  const handleKeyPress = (event) => {                 //eventlistneer enter
     if (event.key === 'Enter') {
       const address = event.target.value.trim();
       if (address) {
@@ -19,7 +19,7 @@ function HomePageContent() {
     }
   };
 
-  const handleCreateSeedPhrase = () => {
+  const handleCreateSeedPhrase = () => {                  //Seed Phrase mking
     const mn = generateMnemonic();
     setMnemonic(mn);
   };
@@ -61,7 +61,7 @@ function HomePageContent() {
           }}>
             <h3 style={{ margin: "0 0 25px 0", color: "#1a1a1a",fontSize: "1.4em",fontWeight: "500",textTransform: "lowercase"
             }}>
-              create your seed phrase(Click again to change)
+              create your seed phrase"Click again to change"
             </h3>
             
             <button 
@@ -74,7 +74,7 @@ function HomePageContent() {
             </button>
 
             
-            <div style={{                         //seed phrase mein 8 rows
+            <div style={{                         //rows in seed 
               display: "grid", 
               gridTemplateColumns: "repeat(4, 1fr)", 
               gap: "12px"

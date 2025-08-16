@@ -96,11 +96,9 @@ export function WalletOverview() {
             console.log("Starting to fetch transaction history...");
             
             const rpcEndpoints = [
-                "https://solana-mainnet.rpc.extrnode.com",
-                "https://rpc.helius.xyz/?api-key=1d6210c7-0c0c-4a78-9f78-4c2c0c0c0c0c",
+                "https://rpc.helius.xyz/?api-key=a86d069d-2b5a-4412-9b50-fb4a26bb0f2c",
                 "https://solana.public-rpc.com",
-                "https://api.mainnet-beta.solana.com"
-            ];
+                "https://api.mainnet-beta.solana.com"];
             
             let connection;
             let signatures = [];
@@ -137,6 +135,7 @@ export function WalletOverview() {
                         const tx = await connection.getTransaction(sig.signature, {
                             maxSupportedTransactionVersion: 0
                         });
+                        console.log("Tx", tx);
                         return {
                             signature: sig.signature,
                             blockTime: tx?.blockTime ? new Date(tx.blockTime * 1000).toLocaleString() : 'Unknown',
